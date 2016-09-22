@@ -1,6 +1,7 @@
 # The application for the monitoring and conduction assistance for intellectual games “OWL”
 ### 1.	Introduction.
 Leisure activities in our time – are not uncommon. Because of its simplicity and the good atmosphere of intellectual battles are widely gaining popularity intellectual team games like “BrainRing”. Moreover, some among them go beyond simple evening gatherings. This is an application designed to help the organizers of this type of holiday in the conduct and monitoring of their activities.
+
 ### 2.	User requirements.
 ###  2.1.	Software interfaces.
 Main application - Java language. It is also planned to use the services, allowing to organize the transfer of data over the Internet. Among plans – using a third-party database to store information.
@@ -12,6 +13,7 @@ The target audience of the application - the organizers and fans of intellectual
 Factors that may affect the system requirements:
 -	the availability of access to the Internet through available mobile device 
 - specific requirements of users of the system
+
 ### 3.	System requirements.
 ###  3.1.	Functional requirements.
 1.	The system must be implemented in the Java language.
