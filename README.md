@@ -23,9 +23,7 @@ Factors that may affect the system requirements:
 ###  3.2.	Non-functional requirements.
 ###   3.2.1.	Quality attributes.
 1.	Reliability.
-
 The most important attribute of quality control. Reliability depends on safety of users’ data and the accuracy of the system.
 2.	The system should be intuitive.
 3.	Nice appearance.
-
 Very valuable attributes, because quality perception - half the success of your application.
