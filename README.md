@@ -19,6 +19,7 @@ Factors that may affect the system requirements:
 1.	The system must be implemented in the Java language.
 2.	The system should be implemented based on the Android OS.
 3.	The system must have the Internet connection.
+
 ###  3.2.	Non-functional requirements.
 ###   3.2.1.	Quality attributes.
 1.	Reliability.
