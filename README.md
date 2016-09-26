@@ -16,9 +16,9 @@ Factors that may affect the system requirements:
 
 ### 3.	System requirements.
 ###  3.1.	Functional requirements.
-1.	The system must be implemented in the Java language.
-2.	The system should be implemented based on the Android OS.
-3.	The system must have the Internet connection.
+1.	The ability to register and login teams in the system.
+2.	The possibility of games conduction, including the drawing up of a list of questions, teams registration, team answers fixation and post-match statistics.
+3.	The seasonal statistics view.
 
 ###  3.2.	Non-functional requirements.
 ###   3.2.1.	Quality attributes.
