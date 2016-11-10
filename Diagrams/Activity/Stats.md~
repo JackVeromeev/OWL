@@ -1,0 +1,368 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"58098D230370"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"58098D230372"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"58098D390110"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"58098D520288"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098D6A0312"
+			    supplier   	
+|Tap the "Check statistics" button
+			    
+			    quidu      	"58098D560041"
+			    sendEvent  	(object sendEvent
+				quid       	"58098D6A0315")))
+		    type       	"StartState")
+		(object ActivityState "Tap the \"Check statistics\" button"
+		    quid       	"58098D560041"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098EF80321"
+			    supplier   	"Get statistics from DB"
+			    quidu      	"58098D6E03BD"
+			    sendEvent  	(object sendEvent
+				quid       	"58098EF80324"))))
+		(object ActivityState "Get statistics from DB"
+		    quid       	"58098D6E03BD"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098EFB015D"
+			    supplier   	"Show statistics"
+			    quidu      	"58098EEA005F"
+			    sendEvent  	(object sendEvent
+				quid       	"58098EFB0160"))))
+		(object ActivityState "Show statistics"
+		    quid       	"58098EEA005F"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098EFE00C7"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"58098EF502C9"
+			    sendEvent  	(object sendEvent
+				quid       	"58098EFE00CA"))))
+		(object State "$UNNAMED$1"
+		    quid       	"58098EF502C9"
+		    type       	"EndState"))
+	    partitions 	(list Partitions
+		(object Partition "User"
+		    quid       	"58098D490132"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE)
+		(object Partition "Server"
+		    quid       	"58098D4D0082"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE))
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object ActivityDiagram "Statistics"
+		    quid       	"58098D390112"
+		    title      	"Statistics"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object Swimlane "User" @1
+			    line_color 	3342489
+			    quidu      	"58098D490132"
+			    width      	616)
+			(object StateView "StartState" "$UNNAMED$0" @2
+			    Parent_View 	@1
+			    location   	(304, 272)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(346, 242)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58098D520288"
+			    autoResize 	TRUE)
+			(object ActivityStateView "Tap the \"Check statistics\" button" @3
+			    Parent_View 	@1
+			    location   	(308, 528)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(308, 513)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	366
+				justify    	0
+				label      	
+|Tap the "Check statistics" button
+				)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098D560041"
+			    width      	496
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @4
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098D6A0312"
+			    client     	@2
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object Swimlane "Server" @5
+			    location   	(616, 0)
+			    line_color 	3342489
+			    quidu      	"58098D4D0082"
+			    width      	580)
+			(object ActivityStateView "Get statistics from DB" @6
+			    Parent_View 	@5
+			    location   	(912, 688)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@6
+				location   	(912, 673)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	318
+				justify    	0
+				label      	"Get statistics from DB")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098D6E03BD"
+			    width      	448
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "Show statistics" @7
+			    Parent_View 	@5
+			    location   	(912, 992)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@7
+				location   	(912, 986)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Show statistics")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098EEA005F"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @8
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098EFB015D"
+			    client     	@6
+			    supplier   	@7
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object Swimlane "" @9
+			    location   	(1196, 0)
+			    line_color 	3342489
+			    width      	450)
+			(object StateView "EndState" "$UNNAMED$1" @10
+			    Parent_View 	@1
+			    location   	(304, 1248)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@10
+				location   	(358, 1206)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58098EF502C9"
+			    autoResize 	TRUE)
+			(object TransView "" @11
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098EF80321"
+			    client     	@3
+			    supplier   	@6
+			    vertices   	(list Points
+				(536, 526)
+				(909, 525)
+				(910, 617))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @12
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098EFE00C7"
+			    client     	@7
+			    supplier   	@10
+			    vertices   	(list Points
+				(911, 1054)
+				(909, 1247)
+				(346, 1247))
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"58098D2E0096"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"58098D230371"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"58098D230373"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"58098D2E0098"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"58098D230373"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"58098D2E0095"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"58098D230374"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"58098D230376"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"58098D230375"))

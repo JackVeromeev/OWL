@@ -1,0 +1,667 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"58098C25036B"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"58098C25036D"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"58098C3702E3"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"58098C570088"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098CFB0244"
+			    supplier   	
+|"Register new team" pressed
+			    
+			    quidu      	"58098C6F030C"
+			    sendEvent  	(object sendEvent
+				quid       	"58098CFB0247")))
+		    type       	"StartState")
+		(object ActivityState "\"Register new team\" pressed"
+		    quid       	"58098C6F030C"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098D010213"
+			    supplier   	"Save team in database"
+			    quidu      	"58098CE9032E"
+			    sendEvent  	(object sendEvent
+				quid       	"58098D010216"))
+			(object State_Transition
+			    quid       	"58098E0E038A"
+			    supplier   	"Fill in the fields"
+			    quidu      	"58098DEC031B"
+			    sendEvent  	(object sendEvent
+				quid       	"58098E0E038D"))
+			(object State_Transition
+			    quid       	"58125E680189"
+			    supplier   	"Show form for filling"
+			    quidu      	"58125E50034A"
+			    sendEvent  	(object sendEvent
+				quid       	"58125E68018C"))))
+		(object ActivityState "Save team in database"
+		    quid       	"58098CE9032E"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098D0400AE"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"58098CF503DD"
+			    sendEvent  	(object sendEvent
+				quid       	"58098D0400B1"))))
+		(object State "$UNNAMED$1"
+		    quid       	"58098CF503DD"
+		    type       	"EndState")
+		(object ActivityState "Fill in the fields"
+		    quid       	"58098DEC031B"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098E1200CA"
+			    supplier   	"Save team in database"
+			    quidu      	"58098CE9032E"
+			    sendEvent  	(object sendEvent
+				quid       	"58098E1200CD"))
+			(object State_Transition
+			    quid       	"581261EB014A"
+			    supplier   	"Check for duplications in DB"
+			    quidu      	"5812613A03B9"
+			    sendEvent  	(object sendEvent
+				quid       	"581261EB014D"))))
+		(object ActivityState "Show form for filling"
+		    quid       	"58125E50034A"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58125E6A0101"
+			    supplier   	"Fill in the fields"
+			    quidu      	"58098DEC031B"
+			    sendEvent  	(object sendEvent
+				quid       	"58125E6A0104"))))
+		(object ActivityState "Check for duplications in DB"
+		    quid       	"5812613A03B9"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581261EE02FD"
+			    supplier   	"Similar post found?"
+			    quidu      	"58126173026A"
+			    sendEvent  	(object sendEvent
+				quid       	"581261EE0300"))))
+		(object Decision "Similar post found?"
+		    quid       	"58126173026A"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581261F50033"
+			    label      	""
+			    supplier   	"Propose to register once again"
+			    quidu      	"581261B003E7"
+			    Event      	(object Event "Yes"
+				quid       	"581261F50034")
+			    sendEvent  	(object sendEvent
+				quid       	"581261F50036"))
+			(object State_Transition
+			    quid       	"581261FC03DB"
+			    label      	""
+			    supplier   	"Save team in database"
+			    quidu      	"58098CE9032E"
+			    Event      	(object Event "No"
+				quid       	"581261FC03DC")
+			    sendEvent  	(object sendEvent
+				quid       	"581261FC03DE"))))
+		(object ActivityState "Propose to register once again"
+		    quid       	"581261B003E7"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581261F7035D"
+			    supplier   	"Fill in the fields"
+			    quidu      	"58098DEC031B"
+			    sendEvent  	(object sendEvent
+				quid       	"581261F70360")))))
+	    partitions 	(list Partitions
+		(object Partition "User"
+		    quid       	"58098C470124"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE)
+		(object Partition "Server"
+		    quid       	"58098C4E0114"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE))
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object ActivityDiagram "Register new team"
+		    quid       	"58098C3702E5"
+		    title      	"Register new team"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object Swimlane "User" @1
+			    line_color 	3342489
+			    quidu      	"58098C470124"
+			    width      	554)
+			(object StateView "StartState" "$UNNAMED$0" @2
+			    Parent_View 	@1
+			    location   	(256, 288)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(298, 258)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58098C570088"
+			    autoResize 	TRUE)
+			(object ActivityStateView "\"Register new team\" pressed" @3
+			    Parent_View 	@1
+			    location   	(266, 592)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(266, 586)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	
+|"Register new team" pressed
+				)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098C6F030C"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @4
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098CFB0244"
+			    client     	@2
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "EndState" "$UNNAMED$1" @5
+			    Parent_View 	@1
+			    location   	(240, 2176)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@5
+				location   	(294, 2134)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58098CF503DD"
+			    autoResize 	TRUE)
+			(object ActivityStateView "Fill in the fields" @6
+			    Parent_View 	@1
+			    location   	(289, 992)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@6
+				location   	(289, 986)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Fill in the fields")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098DEC031B"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object Swimlane "Server" @7
+			    location   	(554, 0)
+			    line_color 	3342489
+			    quidu      	"58098C4E0114"
+			    width      	616)
+			(object ActivityStateView "Save team in database" @8
+			    Parent_View 	@7
+			    location   	(832, 2000)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@8
+				location   	(832, 1994)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Save team in database")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098CE9032E"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @9
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098D0400AE"
+			    client     	@8
+			    supplier   	@5
+			    vertices   	(list Points
+				(820, 2061)
+				(800, 2173)
+				(282, 2175))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Show form for filling" @10
+			    Parent_View 	@7
+			    location   	(832, 752)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@10
+				location   	(832, 746)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Show form for filling")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58125E50034A"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @11
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58125E680189"
+			    client     	@3
+			    supplier   	@10
+			    vertices   	(list Points
+				(456, 591)
+				(831, 591)
+				(831, 690))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @12
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58125E6A0101"
+			    client     	@10
+			    supplier   	@6
+			    vertices   	(list Points
+				(641, 751)
+				(288, 750)
+				(288, 930))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Check for duplications in DB" @13
+			    Parent_View 	@7
+			    location   	(852, 1184)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@13
+				location   	(852, 1169)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	346
+				justify    	0
+				label      	"Check for duplications in DB")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5812613A03B9"
+			    width      	476
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object DecisionView "Similar post found?" @14
+			    Parent_View 	@7
+			    location   	(848, 1456)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@14
+				location   	(904, 1407)
+				nlines     	2
+				max_width  	300
+				label      	"Similar post found?")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58126173026A"
+			    autoResize 	TRUE)
+			(object ActivityStateView "Propose to register once again" @15
+			    Parent_View 	@7
+			    location   	(860, 1728)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@15
+				location   	(860, 1713)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	362
+				justify    	0
+				label      	"Propose to register once again")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"581261B003E7"
+			    width      	492
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object Swimlane "" @16
+			    location   	(1170, 0)
+			    line_color 	3342489
+			    width      	450)
+			(object TransView "" @17
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581261EE02FD"
+			    client     	@13
+			    supplier   	@14
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @18
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581261F7035D"
+			    client     	@15
+			    supplier   	@6
+			    vertices   	(list Points
+				(633, 1726)
+				(288, 1724)
+				(288, 1053))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @19
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581261EB014A"
+			    client     	@6
+			    supplier   	@13
+			    vertices   	(list Points
+				(479, 991)
+				(847, 990)
+				(850, 1112))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @20
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @21
+				Parent_View 	@20
+				location   	(882, 1530)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Yes"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581261F50033"
+			    client     	@14
+			    supplier   	@15
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @22
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @23
+				Parent_View 	@22
+				location   	(1124, 1639)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"No"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581261FC03DB"
+			    client     	@14
+			    supplier   	@8
+			    vertices   	(list Points
+				(923, 1456)
+				(1088, 1452)
+				(1103, 1999)
+				(1022, 1999))
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"58098C30013E"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"58098C25036C"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"58098C25036E"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"58098C300140"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"58098C25036E"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"58098C30013D"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"58098C25036F"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"58098C250371"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"58098C250370"))

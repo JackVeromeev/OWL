@@ -1,0 +1,344 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5809BDE40353"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5809BDE40355"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5809BDEF0070"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5809BDE40354"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5809BDE40356"
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"5809BE51028D"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"5809BE5C0163"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BEC3025F"
+			    supplier   	
+|"View statistics" button pressed
+			    
+			    quidu      	"5809BE60031B"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BEC30262"))
+			(object State_Transition
+			    quid       	"5812590F02E7"
+			    label      	""
+			    supplier   	"Standings table showing"
+			    quidu      	"5809BE7700C9"
+			    Event      	(object Event "\"View statistics\" button pressed"
+				quid       	"5812590F02E8")
+			    sendEvent  	(object sendEvent
+				quid       	"5812590F02EA")))
+		    type       	"StartState")
+		(object State "\"View statistics\" button pressed"
+		    quid       	"5809BE60031B"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BEC5017D"
+			    supplier   	"Standings table showing"
+			    quidu      	"5809BE7700C9"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BEC50180")))
+		    type       	"Normal")
+		(object State "Standings table showing"
+		    quid       	"5809BE7700C9"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BEC700C8"
+			    supplier   	
+|"Back" button was pressed
+			    
+			    quidu      	"5809BEAD016E"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BEC700CB"))
+			(object State_Transition
+			    quid       	"5812591E0208"
+			    label      	""
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809BEA5004F"
+			    Event      	(object Event "\"Back\" button was pressed"
+				quid       	"5812591E0209")
+			    sendEvent  	(object sendEvent
+				quid       	"5812591E020B")))
+		    type       	"Normal")
+		(object State "$UNNAMED$1"
+		    quid       	"5809BEA5004F"
+		    type       	"EndState")
+		(object State "\"Back\" button was pressed"
+		    quid       	"5809BEAD016E"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BEC9004C"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809BEA5004F"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BEC9004F")))
+		    type       	"Normal"))
+	    partitions 	(list Partitions)
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object State_Diagram "Stats"
+		    quid       	"5809BE51028F"
+		    title      	"Stats"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object StateView "StartState" "$UNNAMED$0" @1
+			    location   	(304, 352)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@1
+				location   	(346, 322)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809BE5C0163"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Standings table showing" @2
+			    location   	(1376, 352)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(1376, 332)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	284
+				justify    	0
+				label      	"Standings table showing")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809BE7700C9"
+			    width      	380
+			    height     	152
+			    autoResize 	TRUE)
+			(object StateView "EndState" "$UNNAMED$1" @3
+			    location   	(1376, 688)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(1430, 646)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809BEA5004F"
+			    autoResize 	TRUE)
+			(object TransView "" @4
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @5
+				Parent_View 	@4
+				location   	(760, 308)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	580
+				justify    	0
+				label      	
+|"View statistics" button pressed
+				
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5812590F02E7"
+			    client     	@1
+			    supplier   	@2
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @6
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @7
+				Parent_View 	@6
+				location   	(1406, 493)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	515
+				justify    	0
+				label      	
+|"Back" button was pressed
+				
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5812591E0208"
+			    client     	@2
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5809BDEF0071"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5809BDE40356"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5809BDEF006F"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5809BDE40357"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5809BDE40359"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5809BDE40358"))

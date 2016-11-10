@@ -1,0 +1,586 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5809BCEE01CA"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5809BCEE01CC"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5809BCF802D2"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5809BCEE01CB"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5809BCEE01CD"
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"5809BD02033A"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"5809BD0F027B"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BD4F02E8"
+			    supplier   	
+|"Create new team" button pressed
+			    
+			    quidu      	"5809BD160345"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BD4F02EB"))
+			(object State_Transition
+			    quid       	"58124D0A0193"
+			    label      	""
+			    supplier   	"Empty form"
+			    quidu      	"5809BD2A03CE"
+			    Event      	(object Event "Create new team"
+				quid       	"58124D0A0194")
+			    sendEvent  	(object sendEvent
+				quid       	"58124D0A0196")))
+		    type       	"StartState")
+		(object State "\"Create new team\" button pressed"
+		    quid       	"5809BD160345"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BD51039C"
+			    supplier   	"Empty form"
+			    quidu      	"5809BD2A03CE"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BD51039F")))
+		    type       	"Normal")
+		(object State "Empty form"
+		    quid       	"5809BD2A03CE"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BD5400F3"
+			    label      	""
+			    supplier   	"checkForDuplicates"
+			    quidu      	"5809BD40006F"
+			    condition  	"fieldsAreFilled = true"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BD5400F6"))
+			(object State_Transition
+			    quid       	"5824A10E027F"
+			    label      	""
+			    supplier   	"Empty form"
+			    quidu      	"5809BD2A03CE"
+			    condition  	"fieldsAreFilled = false"
+			    sendEvent  	(object sendEvent
+				quid       	"5824A10E0282")))
+		    type       	"Normal")
+		(object State "checkForDuplicates"
+		    quid       	"5809BD40006F"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58124EC20113"
+			    label      	""
+			    supplier   	"Proposition to create one another team"
+			    quidu      	"58124E520001"
+			    condition  	"Duplicates in DB not founded"
+			    sendEvent  	(object sendEvent
+				quid       	"58124EC20116")))
+		    type       	"Normal")
+		(object State "\"Exit\" button pressed"
+		    quid       	"5809BDAD02D7"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BDC40023"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809BDBD01F9"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BDC40026")))
+		    type       	"Normal")
+		(object State "$UNNAMED$1"
+		    quid       	"5809BDBD01F9"
+		    type       	"EndState")
+		(object State "Proposition to create one another team"
+		    quid       	"58124E520001"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58124F0502A9"
+			    label      	""
+			    supplier   	"Empty form"
+			    quidu      	"5809BD2A03CE"
+			    condition  	"agreeing"
+			    sendEvent  	(object sendEvent
+				quid       	"58124F0502AC"))
+			(object State_Transition
+			    quid       	"5824A20201B4"
+			    label      	""
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809BDBD01F9"
+			    Event      	(object Event "[ disagreeing ]"
+				quid       	"5824A20201B5")
+			    sendEvent  	(object sendEvent
+				quid       	"5824A20201B7")))
+		    type       	"Normal"))
+	    partitions 	(list Partitions)
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object State_Diagram "New team"
+		    quid       	"5809BD02033C"
+		    title      	"New team"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object StateView "StartState" "$UNNAMED$0" @1
+			    location   	(496, 368)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@1
+				location   	(538, 338)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809BD0F027B"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Empty form" @2
+			    location   	(1168, 368)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(1168, 357)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"Empty form")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809BD2A03CE"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "checkForDuplicates" @3
+			    location   	(2560, 368)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(2560, 352)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	278
+				justify    	0
+				label      	"checkForDuplicates")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809BD40006F"
+			    width      	375
+			    height     	144
+			    autoResize 	TRUE)
+			(object TransView "" @4
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @5
+				Parent_View 	@4
+				location   	(1876, 324)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	421
+				justify    	0
+				label      	"[ fieldsAreFilled = true ]"
+				pctDist    	0.527473
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809BD5400F3"
+			    client     	@2
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "EndState" "$UNNAMED$1" @6
+			    location   	(2560, 1008)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@6
+				location   	(2614, 966)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809BDBD01F9"
+			    autoResize 	TRUE)
+			(object TransView "" @7
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @8
+				Parent_View 	@7
+				location   	(802, 324)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	336
+				justify    	0
+				label      	"Create new team"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58124D0A0193"
+			    client     	@1
+			    supplier   	@2
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Proposition to create one another team" @9
+			    location   	(2560, 720)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@9
+				location   	(2560, 700)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	532
+				justify    	0
+				label      	"Proposition to create one another team")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58124E520001"
+			    width      	628
+			    height     	152
+			    autoResize 	TRUE)
+			(object TransView "" @10
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @11
+				Parent_View 	@10
+				location   	(2577, 513)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	614
+				justify    	0
+				label      	"[ Duplicates in DB not founded ]"
+				pctDist    	0.284314
+				height     	30
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58124EC20113"
+			    client     	@3
+			    supplier   	@9
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object SelfTransView "" @12
+			    location   	(1168, 151)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @13
+				Parent_View 	@12
+				location   	(1170, 91)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	454
+				justify    	0
+				label      	"[ fieldsAreFilled = false ]"
+				pctDist    	0.500000
+				height     	210
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5824A10E027F"
+			    client     	@2
+			    supplier   	@2
+			    line_style 	4)
+			(object TransView "" @14
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @15
+				Parent_View 	@14
+				location   	(1591, 676)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	211
+				justify    	0
+				label      	"[ agreeing ]"
+				pctDist    	0.466601
+				height     	44
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58124F0502A9"
+			    client     	@9
+			    supplier   	@2
+			    vertices   	(list Points
+				(2246, 719)
+				(1166, 719)
+				(1167, 434))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @16
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @17
+				Parent_View 	@16
+				location   	(2590, 837)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[ disagreeing ]"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5824A20201B4"
+			    client     	@9
+			    supplier   	@6
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5809BCF802D4"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5809BCEE01CD"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5809BCF802D1"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5809BCEE01CE"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5809BCEE01D0"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5809BCEE01CF"))

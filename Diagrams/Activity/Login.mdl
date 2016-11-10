@@ -1,0 +1,741 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"58097DB80028"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"58097DB8002A"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"580989450165"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"5809899F0049"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098B230281"
+			    supplier   	
+|"Signing in" button pressed
+			    
+			    quidu      	"580989A4030C"
+			    sendEvent  	(object sendEvent
+				quid       	"58098B230284")))
+		    type       	"StartState")
+		(object ActivityState "\"Signing in\" button pressed"
+		    quid       	"580989A4030C"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098B290234"
+			    supplier   	
+|"Signing in" button pressed
+			    
+			    quidu      	"580989A4030C"
+			    sendEvent  	(object sendEvent
+				quid       	"58098B290237"))
+			(object State_Transition
+			    quid       	"58098B310039"
+			    supplier   	"Check for registration/data correctness"
+			    quidu      	"580989F90046"
+			    sendEvent  	(object sendEvent
+				quid       	"58098B31003C"))
+			(object State_Transition
+			    quid       	"58125C7C0257"
+			    supplier   	"Show the form for filling"
+			    quidu      	"58125B7803AA"
+			    sendEvent  	(object sendEvent
+				quid       	"58125C7C025A"))))
+		(object ActivityState "Check for registration/data correctness"
+		    quid       	"580989F90046"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098B37017C"
+			    supplier   	"Is user signed up?"
+			    quidu      	"58098A6F02AB"
+			    sendEvent  	(object sendEvent
+				quid       	"58098B37017F"))))
+		(object Decision "Is user signed up?"
+		    quid       	"58098A6F02AB"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098B410387"
+			    label      	""
+			    supplier   	"Signing up/input retrying suggestion"
+			    quidu      	"58098AB1010A"
+			    Event      	(object Event "No"
+				quid       	"5812369E033C")
+			    sendEvent  	(object sendEvent
+				quid       	"58098B41038A"))
+			(object State_Transition
+			    quid       	"58098B470346"
+			    label      	""
+			    supplier   	"User is logged"
+			    quidu      	"58098ABE03DB"
+			    Event      	(object Event "Yes"
+				quid       	"5812369E0341")
+			    sendEvent  	(object sendEvent
+				quid       	"58098B470349"))))
+		(object ActivityState "Signing up/input retrying suggestion"
+		    quid       	"58098AB1010A"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098B9202FF"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"58098ADB00F2"
+			    sendEvent  	(object sendEvent
+				quid       	"58098B920302"))
+			(object State_Transition
+			    quid       	"58125D5C011C"
+			    supplier   	"Fill the form"
+			    quidu      	"58125BA1008F"
+			    sendEvent  	(object sendEvent
+				quid       	"58125D5C011F"))))
+		(object ActivityState "User is logged"
+		    quid       	"58098ABE03DB"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58098B96024B"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"58098ADB00F2"
+			    sendEvent  	(object sendEvent
+				quid       	"58098B96024E"))))
+		(object State "$UNNAMED$1"
+		    quid       	"58098ADB00F2"
+		    type       	"EndState")
+		(object State "Show the form to filling"
+		    quid       	"58125B4E02F8"
+		    type       	"Normal")
+		(object ActivityState "Show the form for filling"
+		    quid       	"58125B7803AA"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58125C7E0338"
+			    supplier   	"Fill the form"
+			    quidu      	"58125BA1008F"
+			    sendEvent  	(object sendEvent
+				quid       	"58125C7E033B"))))
+		(object ActivityState "Fill the form"
+		    quid       	"58125BA1008F"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58125C81027B"
+			    supplier   	"Check for registration/data correctness"
+			    quidu      	"580989F90046"
+			    sendEvent  	(object sendEvent
+				quid       	"58125C81027E")))))
+	    partitions 	(list Partitions
+		(object Partition "User"
+		    quid       	"5809895402B1"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE)
+		(object Partition "Server"
+		    quid       	"580989940026"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE)
+		(object Partition "NewSwimlane"
+		    quid       	"58098BED0039"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE))
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object ActivityDiagram "login"
+		    quid       	"580989450166"
+		    title      	"login"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object Swimlane "User" @1
+			    line_color 	3342489
+			    quidu      	"5809895402B1"
+			    width      	648)
+			(object StateView "StartState" "$UNNAMED$0" @2
+			    Parent_View 	@1
+			    location   	(256, 208)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(298, 178)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809899F0049"
+			    autoResize 	TRUE)
+			(object ActivityStateView "\"Signing in\" button pressed" @3
+			    Parent_View 	@1
+			    location   	(272, 512)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(272, 506)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	
+|"Signing in" button pressed
+				)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"580989A4030C"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @4
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098B230281"
+			    client     	@2
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "EndState" "$UNNAMED$1" @5
+			    Parent_View 	@1
+			    location   	(304, 1920)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@5
+				location   	(358, 1878)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58098ADB00F2"
+			    autoResize 	TRUE)
+			(object ActivityStateView "\"Signing in\" button pressed" @6
+			    Parent_View 	@1
+			    location   	(272, 512)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@6
+				location   	(272, 506)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	
+|"Signing in" button pressed
+				)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"580989A4030C"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "\"Signing in\" button pressed" @7
+			    Parent_View 	@1
+			    location   	(272, 512)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@7
+				location   	(272, 506)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	
+|"Signing in" button pressed
+				)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"580989A4030C"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "Fill the form" @8
+			    Parent_View 	@1
+			    location   	(289, 912)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@8
+				location   	(289, 906)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Fill the form")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58125BA1008F"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object Swimlane "Server" @9
+			    location   	(648, 0)
+			    line_color 	3342489
+			    quidu      	"580989940026"
+			    width      	836)
+			(object ActivityStateView "Check for registration/data correctness" @10
+			    Parent_View 	@9
+			    location   	(1070, 1152)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@10
+				location   	(1070, 1137)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	578
+				justify    	0
+				label      	"Check for registration/data correctness")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"580989F90046"
+			    width      	708
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object DecisionView "Is user signed up?" @11
+			    Parent_View 	@9
+			    location   	(1070, 1392)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@11
+				location   	(1126, 1343)
+				nlines     	2
+				max_width  	300
+				label      	"Is user signed up?")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098A6F02AB"
+			    autoResize 	TRUE)
+			(object TransView "" @12
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098B37017C"
+			    client     	@10
+			    supplier   	@11
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "User is logged" @13
+			    Parent_View 	@9
+			    location   	(1088, 1920)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@13
+				location   	(1088, 1914)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"User is logged")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098ABE03DB"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "Show the form for filling" @14
+			    Parent_View 	@9
+			    location   	(1070, 720)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@14
+				location   	(1070, 714)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Show the form for filling")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58125B7803AA"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @15
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58125C7C0257"
+			    client     	@7
+			    supplier   	@14
+			    vertices   	(list Points
+				(462, 511)
+				(1072, 509)
+				(1070, 658))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Signing up/input retrying suggestion" @16
+			    Parent_View 	@9
+			    location   	(1072, 1696)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@16
+				location   	(1072, 1681)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	398
+				justify    	0
+				label      	"Signing up/input retrying suggestion")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098AB1010A"
+			    width      	528
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object Swimlane "" @17
+			    location   	(1484, 0)
+			    line_color 	3342489
+			    width      	450)
+			(object TransView "" @18
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58125D5C011C"
+			    client     	@16
+			    supplier   	@8
+			    vertices   	(list Points
+				(831, 1695)
+				(288, 1694)
+				(288, 974))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @19
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @20
+				Parent_View 	@19
+				location   	(1452, 1544)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Yes"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098B470346"
+			    client     	@11
+			    supplier   	@13
+			    vertices   	(list Points
+				(1145, 1392)
+				(1422, 1391)
+				(1422, 1919)
+				(1278, 1919))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @21
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @22
+				Parent_View 	@21
+				location   	(1100, 1482)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"No"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098B410387"
+			    client     	@11
+			    supplier   	@16
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @23
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58098B96024B"
+			    client     	@13
+			    supplier   	@5
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @24
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58125C7E0338"
+			    client     	@14
+			    supplier   	@8
+			    vertices   	(list Points
+				(879, 719)
+				(288, 719)
+				(288, 849))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @25
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58125C81027B"
+			    client     	@8
+			    supplier   	@10
+			    vertices   	(list Points
+				(479, 911)
+				(1072, 910)
+				(1070, 1080))
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"58097DC800A0"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"58097DB80029"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"58097DB8002B"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"58097DC8013B"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"58097DB8002B"
+	physical_models 	(list unit_reference_list
+	    (object module "NewComponent" "NotAModuleType" "NotAModulePart"
+		quid       	"580983390139"
+		stereotype 	""
+		language   	""))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"58097DC8009F"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"58097DB8002C"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"58097DB8002E"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"58097DB8002D"))

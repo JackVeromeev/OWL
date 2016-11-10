@@ -1,0 +1,554 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5809BA3E01B1"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5809BA3E01B3"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5809BA4802BD"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5809BA3E01B2"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5809BA3E01B4"
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"5809BAE502F3"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"5809BAF0036B"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BBCA0074"
+			    supplier   	
+|"To sign in" button was pressed
+			    
+			    quidu      	"5809BAF401D5"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BBCA0077"))
+			(object State_Transition
+			    quid       	"581246820006"
+			    label      	""
+			    supplier   	"Empty form"
+			    quidu      	"5809BB3300D7"
+			    Event      	(object Event "\"To sign in\" button pressed"
+				quid       	"581246820007")
+			    sendEvent  	(object sendEvent
+				quid       	"581246820009"))
+			(object State_Transition
+			    quid       	"581C78A600AB"
+			    label      	""
+			    supplier   	"Form to fill"
+			    quidu      	"5809BBA101DB"
+			    Event      	(object Event "\"Login\""
+				quid       	"581C78A600AC")
+			    sendEvent  	(object sendEvent
+				quid       	"581C78A600AE")))
+		    type       	"StartState")
+		(object State "\"To sign in\" button was pressed"
+		    quid       	"5809BAF401D5"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BBC601C8"
+			    supplier   	"Empty form"
+			    quidu      	"5809BB3300D7"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BBC601CB")))
+		    type       	"Normal")
+		(object State "Empty form"
+		    quid       	"5809BB3300D7"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BBCC0125"
+			    label      	""
+			    supplier   	"Form to fill"
+			    quidu      	"5809BBA101DB"
+			    Event      	(object Event "Fill the form in"
+				quid       	"5809BBCC0126")
+			    sendEvent  	(object sendEvent
+				quid       	"5809BBCC0128")))
+		    type       	"Normal")
+		(object State "Form to fill"
+		    quid       	"5809BBA101DB"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BC510276"
+			    supplier   	
+|"Log in" button was pressed
+			    
+			    quidu      	"5809BC180138"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BC510279"))
+			(object State_Transition
+			    quid       	"581246B302D7"
+			    label      	""
+			    supplier   	"Is information correct?"
+			    quidu      	"5809BC9B02D8"
+			    Event      	(object Event "Account information send"
+				quid       	"581246B302D8")
+			    sendEvent  	(object sendEvent
+				quid       	"581246B302DA"))
+			(object State_Transition
+			    quid       	"581C7729035B"
+			    label      	""
+			    supplier   	"Enter the system"
+			    quidu      	"5812471A0392"
+			    Event      	(object Event "[Data is correct]"
+				quid       	"581C7729035C")
+			    sendEvent  	(object sendEvent
+				quid       	"581C7729035E"))
+			(object State_Transition
+			    quid       	"581C772C02B2"
+			    label      	""
+			    supplier   	"Notificate user to refill the fields of sign up"
+			    quidu      	"581247180119"
+			    condition  	"Data is incorrect"
+			    sendEvent  	(object sendEvent
+				quid       	"581C772C02B5"))
+			(object State_Transition
+			    quid       	"581C78B501DD"
+			    label      	""
+			    supplier   	"Form to fill"
+			    quidu      	"5809BBA101DB"
+			    condition  	"Data is incorrect"
+			    sendEvent  	(object sendEvent
+				quid       	"581C78B501E0")))
+		    type       	"Normal")
+		(object State "\"Log in\" button was pressed"
+		    quid       	"5809BC180138"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BC670159"
+			    label      	""
+			    supplier   	"Empty form"
+			    quidu      	"5809BB3300D7"
+			    Event      	(object Event "Flush form"
+				quid       	"5809BC67015A")
+			    sendEvent  	(object sendEvent
+				quid       	"5809BC67015C"))
+			(object State_Transition
+			    quid       	"5809BCAF03E1"
+			    supplier   	"Is information correct?"
+			    quidu      	"5809BC9B02D8"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BCAF03E4")))
+		    type       	"Normal")
+		(object State "Is information correct?"
+		    quid       	"5809BC9B02D8"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809BCB20329"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809BCAB02B0"
+			    sendEvent  	(object sendEvent
+				quid       	"5809BCB2032C"))
+			(object State_Transition
+			    quid       	"581247B0007F"
+			    label      	""
+			    supplier   	"Notificate user to refill the fields of sign up"
+			    quidu      	"581247180119"
+			    Event      	(object Event "No"
+				quid       	"581247B00080")
+			    sendEvent  	(object sendEvent
+				quid       	"581247B00082"))
+			(object State_Transition
+			    quid       	"581247D8036D"
+			    label      	""
+			    supplier   	"Enter the system"
+			    quidu      	"5812471A0392"
+			    Event      	(object Event "Yes"
+				quid       	"581247D8036E")
+			    sendEvent  	(object sendEvent
+				quid       	"581247D80370")))
+		    type       	"Normal")
+		(object State "$UNNAMED$1"
+		    quid       	"5809BCAB02B0"
+		    type       	"EndState")
+		(object State "Notificate user to refill the fields of sign up"
+		    quid       	"581247180119"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581247B2034E"
+			    label      	""
+			    supplier   	"Empty form"
+			    quidu      	"5809BB3300D7"
+			    Event      	(object Event "Flush the form"
+				quid       	"581247B2034F")
+			    sendEvent  	(object sendEvent
+				quid       	"581247B20351")))
+		    type       	"Normal")
+		(object State "Enter the system"
+		    quid       	"5812471A0392"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581247DC002A"
+			    label      	""
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809BCAB02B0"
+			    Event      	(object Event "Entering..."
+				quid       	"581247DC002B")
+			    sendEvent  	(object sendEvent
+				quid       	"581247DC002D")))
+		    type       	"Normal"))
+	    partitions 	(list Partitions)
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object State_Diagram "Login"
+		    quid       	"5809BAE502F5"
+		    title      	"Login"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	403
+		    items      	(list diagram_item_list
+			(object StateView "StartState" "$UNNAMED$0" @1
+			    location   	(288, 352)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@1
+				location   	(330, 322)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809BAF0036B"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Form to fill" @2
+			    location   	(1120, 352)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(1120, 341)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"Form to fill")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809BBA101DB"
+			    autoResize 	TRUE)
+			(object StateView "EndState" "$UNNAMED$1" @3
+			    location   	(1120, 976)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(1174, 934)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809BCAB02B0"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Enter the system" @4
+			    location   	(1120, 720)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@4
+				location   	(1120, 709)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"Enter the system")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5812471A0392"
+			    autoResize 	TRUE)
+			(object TransView "" @5
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @6
+				Parent_View 	@5
+				location   	(1150, 816)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Entering..."
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581247DC002A"
+			    client     	@4
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @7
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @8
+				Parent_View 	@7
+				location   	(1150, 492)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Data is correct]"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581C7729035B"
+			    client     	@2
+			    supplier   	@4
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @9
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @10
+				Parent_View 	@9
+				location   	(644, 308)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	
+|"Login"
+				
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581C78A600AB"
+			    client     	@1
+			    supplier   	@2
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object SelfTransView "" @11
+			    location   	(1120, 135)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @12
+				Parent_View 	@11
+				location   	(1120, 76)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	368
+				justify    	0
+				label      	"[ Data is incorrect ]"
+				pctDist    	0.500000
+				height     	210
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581C78B501DD"
+			    client     	@2
+			    supplier   	@2
+			    line_style 	4)))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5809BA4802BF"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5809BA3E01B4"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5809BA4802BC"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5809BA3E01B5"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5809BA3E01B7"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5809BA3E01B6"))

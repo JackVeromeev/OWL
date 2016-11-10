@@ -1,0 +1,751 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5809ED6F001B"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5809ED6F001D"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5809ED790123"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5809ED6F001C"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5809ED6F001E"
+	logical_models 	(list unit_reference_list
+	    (object Class "User"
+		quid       	"5809F27B03B6"
+		stereotype 	"Actor")
+	    (object Class "Server"
+		quid       	"5809F2850163")
+	    (object Class "Database"
+		quid       	"5809F28E0202")
+	    (object Class "GUI"
+		quid       	"5824E6FA023B")
+	    (object Class "Teams"
+		quid       	"5824E716029C")
+	    (object Class "Application"
+		quid       	"5824EA590103")
+	    (object Mechanism @1
+		logical_models 	(list unit_reference_list
+		    (object Object "User"
+			quid       	"5824E6E70185"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5824E74F03CB"
+				supplier   	"App"
+				quidu      	"5824E6F000EF"
+				messages   	(list Messages
+				    (object Message "1. createNewGame()"
+					quid       	"5824E74F03CC"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1"
+					ordinal    	0
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "3. teamSelection()"
+					quid       	"5824E9F10257"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"ToClientFromSupplier"
+					sequence   	"1.2"
+					ordinal    	2
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "4. selectTeams()"
+					quid       	"5824EA0100A4"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2"
+					ordinal    	3
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "5. createQuestionsList()"
+					quid       	"5824EA290251"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"3"
+					ordinal    	4
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "6. showQuestions()"
+					quid       	"5824EB8701F0"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"3.1"
+					ordinal    	5
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "7. writeDownTheAnswers()"
+					quid       	"5824EBF200E2"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"3.1.1"
+					ordinal    	6
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			class      	"Logical View::User"
+			quidu      	"5809F27B03B6"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "App"
+			quid       	"5824E6F000EF"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5824E77C038B"
+				supplier   	"App"
+				quidu      	"5824E6F000EF")
+			    (object Link
+				quid       	"5824E9BF00A6"
+				supplier   	"TeamsInfo"
+				quidu      	"5824E6FF02C5"
+				messages   	(list Messages
+				    (object Message "2. getTeamsList()"
+					quid       	"5824E9BF00A7"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1.1"
+					ordinal    	1
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "8. addStats()"
+					quid       	"5824EC4D00B0"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"3.1.1.1"
+					ordinal    	7
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			class      	"Logical View::Application"
+			quidu      	"5824EA590103"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "TeamsInfo"
+			quid       	"5824E6FF02C5"
+			class      	"Logical View::Teams"
+			quidu      	"5824E716029C"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5809ED790125"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram "NewGame"
+		mechanism_ref 	@1
+		quid       	"5809ED820319"
+		title      	"NewGame"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object InterObjView "User" @2
+			location   	(448, 224)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(448, 249)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	360
+			    justify    	0
+			    label      	"User")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5824E6E70185"
+			width      	336
+			height     	1174
+			icon_height 	162
+			icon_width 	120
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @3
+			    location   	(448, 320)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	988
+			    y_coord    	928
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @4
+			    location   	(448, 432)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @5
+			    location   	(448, 864)
+			    line_color 	3342489
+			    InterObjView 	@2
+			    height     	324
+			    y_coord    	264
+			    Nested     	TRUE))
+		    (object InterObjView "App" @6
+			location   	(1216, 224)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(1216, 224)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	312
+			    justify    	0
+			    label      	"App")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5824E6F000EF"
+			width      	330
+			height     	1174
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @7
+			    location   	(1216, 320)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	940
+			    y_coord    	880
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @8
+			    location   	(1216, 544)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	710
+			    y_coord    	650
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @9
+			    location   	(1216, 640)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	608
+			    y_coord    	548
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @10
+			    location   	(1216, 960)
+			    line_color 	3342489
+			    InterObjView 	@6
+			    height     	168
+			    y_coord    	108
+			    Nested     	TRUE))
+		    (object InterObjView "TeamsInfo" @11
+			location   	(2000, 224)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@11
+			    location   	(2000, 224)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"TeamsInfo")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5824E6FF02C5"
+			width      	300
+			height     	1174
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @12
+			    location   	(2000, 352)
+			    line_color 	3342489
+			    InterObjView 	@11
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @13
+			    location   	(2000, 1008)
+			    line_color 	3342489
+			    InterObjView 	@11
+			    height     	60
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterMessView "" @14
+			location   	(848, 320)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @15
+			    Parent_View 	@14
+			    location   	(831, 276)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824E74F03CC"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	385
+			    justify    	0
+			    label      	"1. createNewGame()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@6
+			Focus_Src  	@3
+			Focus_Entry 	@7
+			origin     	(463, 320)
+			terminus   	(1200, 320)
+			ordinal    	0)
+		    (object InterMessView "" @16
+			location   	(16, 352)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @17
+			    Parent_View 	@16
+			    location   	(1607, 308)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824E9BF00A7"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	326
+			    justify    	0
+			    label      	"2. getTeamsList()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@11
+			Focus_Src  	@7
+			Focus_Entry 	@12
+			origin     	(1231, 352)
+			terminus   	(1984, 352)
+			ordinal    	1)
+		    (object InterMessView "" @18
+			location   	(832, 432)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @19
+			    Parent_View 	@18
+			    location   	(832, 388)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824E9F10257"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	344
+			    justify    	0
+			    label      	"3. teamSelection()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@6
+			supplier   	@2
+			Focus_Src  	@7
+			Focus_Entry 	@4
+			origin     	(1200, 432)
+			terminus   	(464, 432)
+			ordinal    	2)
+		    (object InterMessView "" @20
+			location   	(832, 544)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @21
+			    Parent_View 	@20
+			    location   	(831, 500)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824EA0100A4"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	313
+			    justify    	0
+			    label      	"4. selectTeams()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@6
+			Focus_Src  	@3
+			Focus_Entry 	@8
+			origin     	(463, 544)
+			terminus   	(1200, 544)
+			ordinal    	3)
+		    (object InterMessView "" @22
+			location   	(848, 640)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @23
+			    Parent_View 	@22
+			    location   	(831, 597)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824EA290251"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	448
+			    justify    	0
+			    label      	"5. createQuestionsList()"
+			    pctDist    	0.499322
+			    height     	44
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@6
+			Focus_Src  	@3
+			Focus_Entry 	@9
+			origin     	(463, 640)
+			terminus   	(1200, 640)
+			ordinal    	4)
+		    (object InterMessView "" @24
+			location   	(832, 864)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @25
+			    Parent_View 	@24
+			    location   	(832, 820)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824EB8701F0"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	363
+			    justify    	0
+			    label      	"6. showQuestions()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@6
+			supplier   	@2
+			Focus_Src  	@9
+			Focus_Entry 	@5
+			origin     	(1200, 864)
+			terminus   	(464, 864)
+			ordinal    	5)
+		    (object Label @26
+			location   	(720, 704)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			nlines     	1
+			max_width  	281
+			label      	"Game start")
+		    (object InterMessView "" @27
+			location   	(832, 960)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @28
+			    Parent_View 	@27
+			    location   	(831, 916)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824EBF200E2"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	539
+			    justify    	0
+			    label      	"7. writeDownTheAnswers()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@2
+			supplier   	@6
+			Focus_Src  	@5
+			Focus_Entry 	@10
+			origin     	(463, 960)
+			terminus   	(1200, 960)
+			ordinal    	6)
+		    (object InterMessView "" @29
+			location   	(16, 1008)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @30
+			    Parent_View 	@29
+			    location   	(1607, 964)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5824EC4D00B0"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	248
+			    justify    	0
+			    label      	"8. addStats()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@6
+			supplier   	@11
+			Focus_Src  	@10
+			Focus_Entry 	@13
+			origin     	(1231, 1008)
+			terminus   	(1984, 1008)
+			ordinal    	7)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5809ED6F001E"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5809ED790122"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5809ED6F001F"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5809ED6F0021"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5809ED6F0020"))

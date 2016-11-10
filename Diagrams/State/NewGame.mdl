@@ -1,0 +1,876 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5809BED40270"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5809BED40272"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5809BEDE0367"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5809BED40271"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5809BED40273"
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"5809E2D7023C"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"5809E2EA0280"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E49D0207"
+			    supplier   	
+|User click a "Create Game" button
+			    
+			    quidu      	"5809E301021B"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E49D020A"))
+			(object State_Transition
+			    quid       	"5812482E03D6"
+			    label      	""
+			    supplier   	"Window with requrement of chosing teams, which want to play"
+			    quidu      	"5809E31A00DD"
+			    Event      	(object Event "User click a \"Create Game\" button"
+				quid       	"5812482E03D7")
+			    sendEvent  	(object sendEvent
+				quid       	"5812482E03D9"))
+			(object State_Transition
+			    quid       	"58249DF50135"
+			    label      	""
+			    supplier   	"addTeams"
+			    quidu      	"58249DAA00B0"
+			    Event      	(object Event "Create new game"
+				quid       	"58249DF50136")
+			    sendEvent  	(object sendEvent
+				quid       	"58249DF50138")))
+		    type       	"StartState")
+		(object State "User click a \"Create Game\" button"
+		    quid       	"5809E301021B"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E49F01C3"
+			    supplier   	"Window with requrement of chosing teams, which want to play"
+			    quidu      	"5809E31A00DD"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E49F01C6")))
+		    type       	"Normal")
+		(object State "Window with requrement of chosing teams, which want to play"
+		    quid       	"5809E31A00DD"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E4A10330"
+			    label      	""
+			    supplier   	"Choose teams from global list"
+			    quidu      	"5809E48C00C5"
+			    Event      	(object Event "Fill the fields in"
+				quid       	"5809E4A10331")
+			    sendEvent  	(object sendEvent
+				quid       	"5809E4A10333"))
+			(object State_Transition
+			    quid       	"58124841006E"
+			    label      	""
+			    supplier   	"Window with requrement of questions input"
+			    quidu      	"5809E503022A"
+			    Event      	(object Event "Choose teams from global list"
+				quid       	"58124841006F")
+			    sendEvent  	(object sendEvent
+				quid       	"581248410071"))
+			(object State_Transition
+			    quid       	"581248B102E0"
+			    label      	""
+			    supplier   	"There is more, than one team in global list?"
+			    quidu      	"5812486B0102"
+			    Event      	(object Event "Press the \"Show global list\" button"
+				quid       	"581248B102E1")
+			    sendEvent  	(object sendEvent
+				quid       	"581248B102E3")))
+		    type       	"Normal")
+		(object State "Choose teams from global list"
+		    quid       	"5809E48C00C5"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E58D005D"
+			    supplier   	"Window with requrement of questions input"
+			    quidu      	"5809E503022A"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E58D0060")))
+		    type       	"Normal")
+		(object State "Window with requrement of questions input"
+		    quid       	"5809E503022A"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E58E03DF"
+			    supplier   	"Create list of questions"
+			    quidu      	"5809E53F014E"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E58E03E2"))
+			(object State_Transition
+			    quid       	"581248530012"
+			    label      	""
+			    supplier   	
+|User click button "Start game"
+			    
+			    quidu      	"5809E5B90371"
+			    Event      	(object Event "Create list of questions and click the \"Start game\" button"
+				quid       	"581248530013")
+			    sendEvent  	(object sendEvent
+				quid       	"581248530015"))
+			(object State_Transition
+			    quid       	"581249D203DC"
+			    label      	""
+			    supplier   	"Draw a window with current question and timer"
+			    quidu      	"5809E6090289"
+			    Event      	(object Event "Create list of questions and click the \"Start game\" button"
+				quid       	"581249D203DD")
+			    sendEvent  	(object sendEvent
+				quid       	"581249D203DF")))
+		    type       	"Normal")
+		(object State "Create list of questions"
+		    quid       	"5809E53F014E"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E5CD02CE"
+			    supplier   	
+|User click button "Start game"
+			    
+			    quidu      	"5809E5B90371"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E5CD02D1")))
+		    type       	"Normal")
+		(object State "User click button \"Start game\""
+		    quid       	"5809E5B90371"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E6F6037C"
+			    supplier   	"Draw a window with current question and timer"
+			    quidu      	"5809E6090289"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E6F6037F")))
+		    type       	"Normal")
+		(object State "Draw a window with current question and timer"
+		    quid       	"5809E6090289"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E6F90302"
+			    label      	""
+			    supplier   	"Time is out"
+			    quidu      	"5809E66A0211"
+			    Event      	(object Event "Check the timer state"
+				quid       	"58124811030D")
+			    sendEvent  	(object sendEvent
+				quid       	"5809E6F90305")))
+		    type       	"Normal")
+		(object State "Time is out"
+		    quid       	"5809E66A0211"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E6FC00A2"
+			    label      	""
+			    supplier   	"Was it last question?"
+			    quidu      	"5809E6D902A7"
+			    Event      	(object Event "Yes"
+				quid       	"581248110313")
+			    sendEvent  	(object sendEvent
+				quid       	"5809E6FC00A5"))
+			(object State_Transition
+			    quid       	"58124A560291"
+			    label      	""
+			    supplier   	"Draw a window with current question and timer"
+			    quidu      	"5809E6090289"
+			    Event      	(object Event "No"
+				quid       	"58124A560292")
+			    sendEvent  	(object sendEvent
+				quid       	"58124A560294"))
+			(object State_Transition
+			    quid       	"58124ABC004C"
+			    label      	""
+			    supplier   	"Fill the table of standings"
+			    quidu      	"5809E743002C"
+			    Event      	(object Event "Yes"
+				quid       	"58124ABC004D")
+			    sendEvent  	(object sendEvent
+				quid       	"58124ABC004F")))
+		    type       	"Normal")
+		(object State "Was it last question?"
+		    quid       	"5809E6D902A7"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E6FF0213"
+			    label      	""
+			    supplier   	"Draw a window with current question and timer"
+			    quidu      	"5809E6090289"
+			    Event      	(object Event "Not last question"
+				quid       	"5809E6FF0214")
+			    sendEvent  	(object sendEvent
+				quid       	"5809E6FF0216"))
+			(object State_Transition
+			    quid       	"5809E77C0023"
+			    label      	""
+			    supplier   	"Fill the table of standings"
+			    quidu      	"5809E743002C"
+			    Event      	(object Event "Last question"
+				quid       	"5809E77C0024")
+			    sendEvent  	(object sendEvent
+				quid       	"5809E77C0026")))
+		    type       	"Normal")
+		(object State "Fill the table of standings"
+		    quid       	"5809E743002C"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809E7B3038C"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809E7B001CD"
+			    sendEvent  	(object sendEvent
+				quid       	"5809E7B3038F"))
+			(object State_Transition
+			    quid       	"58124B150158"
+			    label      	""
+			    supplier   	"Was it the last question?"
+			    quidu      	"58124AC5003D"
+			    Event      	(object Event "Click the \"Next\" button"
+				quid       	"58124B150159")
+			    sendEvent  	(object sendEvent
+				quid       	"58124B15015B")))
+		    type       	"Normal")
+		(object State "$UNNAMED$1"
+		    quid       	"5809E7B001CD"
+		    type       	"EndState")
+		(object State "There is more, than one team in global list?"
+		    quid       	"5812486B0102"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581248B40219"
+			    label      	""
+			    supplier   	"Window with requrement of questions input"
+			    quidu      	"5809E503022A"
+			    Event      	(object Event "Yes"
+				quid       	"581248B4021A")
+			    sendEvent  	(object sendEvent
+				quid       	"581248B4021C"))
+			(object State_Transition
+			    quid       	"5812492C02C4"
+			    label      	""
+			    supplier   	"Proposition of creating new teams"
+			    quidu      	"581248F50034"
+			    Event      	(object Event "No"
+				quid       	"5812492C02C5")
+			    sendEvent  	(object sendEvent
+				quid       	"5812492C02C7"))
+			(object State_Transition
+			    quid       	"581249F8030B"
+			    label      	""
+			    supplier   	"Window with requrement of questions input"
+			    quidu      	"5809E503022A"
+			    Event      	(object Event "Yes"
+				quid       	"581249F8030C")
+			    sendEvent  	(object sendEvent
+				quid       	"581249F8030E"))
+			(object State_Transition
+			    quid       	"58124A040261"
+			    label      	""
+			    supplier   	"Proposition of creating new teams"
+			    quidu      	"581248F50034"
+			    Event      	(object Event "No"
+				quid       	"58124A040262")
+			    sendEvent  	(object sendEvent
+				quid       	"58124A040264")))
+		    type       	"Normal")
+		(object State "Proposition of creating new teams"
+		    quid       	"581248F50034"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5812493100D6"
+			    label      	""
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809E7B001CD"
+			    Event      	(object Event "Transition to \"Creating new team\" item"
+				quid       	"5812493100D7")
+			    sendEvent  	(object sendEvent
+				quid       	"5812493100D9")))
+		    type       	"Normal")
+		(object State "Was it the last question?"
+		    quid       	"58124AC5003D"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58124B2B027F"
+			    label      	""
+			    supplier   	"Draw a window with current question and timer"
+			    quidu      	"5809E6090289"
+			    Event      	(object Event "No"
+				quid       	"58124B2B0280")
+			    sendEvent  	(object sendEvent
+				quid       	"58124B2B0282"))
+			(object State_Transition
+			    quid       	"58124B5F0026"
+			    label      	""
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809E7B001CD"
+			    Event      	(object Event "Yes. Exit to main menu"
+				quid       	"58124B5F0027")
+			    sendEvent  	(object sendEvent
+				quid       	"58124B5F0029")))
+		    type       	"Normal")
+		(object State "addTeams"
+		    quid       	"58249DAA00B0"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58249DF10333"
+			    label      	""
+			    supplier   	"addTeams"
+			    quidu      	"58249DAA00B0"
+			    Event      	(object Event "[teamsNumber < 2]"
+				quid       	"58249DF10334")
+			    sendEvent  	(object sendEvent
+				quid       	"58249DF10336"))
+			(object State_Transition
+			    quid       	"58249E5003A8"
+			    label      	""
+			    supplier   	"createQuestionsList"
+			    quidu      	"58249E280146"
+			    Event      	(object Event "Teams list created, transition to the next point"
+				quid       	"58249E5003A9")
+			    sendEvent  	(object sendEvent
+				quid       	"58249E5003AB")))
+		    type       	"Normal")
+		(object State "createQuestionsList"
+		    quid       	"58249E280146"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58249E9F0201"
+			    label      	""
+			    supplier   	"startGameProcess"
+			    quidu      	"58249E7B01C8"
+			    Event      	(object Event "Questions list created, game starts"
+				quid       	"58249E9F0202")
+			    sendEvent  	(object sendEvent
+				quid       	"58249E9F0204")))
+		    type       	"Normal")
+		(object State "startGameProcess"
+		    quid       	"58249E7B01C8"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58249F2101E1"
+			    label      	""
+			    supplier   	"answerCurrentQuestion"
+			    quidu      	"58249EB10377"
+			    Event      	(object Event "Questions sequence starts"
+				quid       	"58249F2101E2")
+			    sendEvent  	(object sendEvent
+				quid       	"58249F2101E4")))
+		    type       	"Normal")
+		(object State "answerCurrentQuestion"
+		    quid       	"58249EB10377"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"58249F4D01A2"
+			    label      	""
+			    supplier   	"answerCurrentQuestion"
+			    quidu      	"58249EB10377"
+			    condition  	"notLastQuestion"
+			    sendEvent  	(object sendEvent
+				quid       	"58249F4D01A5"))
+			(object State_Transition
+			    quid       	"58249F6E0386"
+			    label      	""
+			    supplier   	"$UNNAMED$2"
+			    quidu      	"58249F6B0391"
+			    condition  	"lastQuestion"
+			    sendEvent  	(object sendEvent
+				quid       	"58249F6E0389")))
+		    type       	"Normal")
+		(object State "$UNNAMED$2"
+		    quid       	"58249F6B0391"
+		    type       	"EndState"))
+	    partitions 	(list Partitions)
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object State_Diagram "NewGame"
+		    quid       	"5809E2D7023D"
+		    title      	"NewGame"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	238
+		    origin_y   	860
+		    items      	(list diagram_item_list
+			(object StateView "StartState" "$UNNAMED$0" @1
+			    location   	(784, 624)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@1
+				location   	(826, 594)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809E2EA0280"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "addTeams" @2
+			    location   	(1344, 624)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(1344, 613)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"addTeams")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58249DAA00B0"
+			    autoResize 	TRUE)
+			(object TransView "" @3
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @4
+				Parent_View 	@3
+				location   	(1034, 580)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Create new game"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58249DF50135"
+			    client     	@1
+			    supplier   	@2
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "createQuestionsList" @5
+			    location   	(2576, 624)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@5
+				location   	(2576, 613)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"createQuestionsList")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58249E280146"
+			    autoResize 	TRUE)
+			(object TransView "" @6
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @7
+				Parent_View 	@6
+				location   	(1990, 580)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	859
+				justify    	0
+				label      	"Teams list created, transition to the next point"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58249E5003A8"
+			    client     	@2
+			    supplier   	@5
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "startGameProcess" @8
+			    location   	(2576, 1040)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@8
+				location   	(2576, 1029)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"startGameProcess")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58249E7B01C8"
+			    autoResize 	TRUE)
+			(object TransView "" @9
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @10
+				Parent_View 	@9
+				location   	(2606, 788)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	637
+				justify    	0
+				label      	"Questions list created, game starts"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58249E9F0201"
+			    client     	@5
+			    supplier   	@8
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "answerCurrentQuestion" @11
+			    location   	(1696, 1040)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@11
+				location   	(1696, 1020)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	238
+				justify    	0
+				label      	"answerCurrentQuestion")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58249EB10377"
+			    width      	334
+			    height     	152
+			    autoResize 	TRUE)
+			(object TransView "" @12
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @13
+				Parent_View 	@12
+				location   	(2174, 996)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	499
+				justify    	0
+				label      	"Questions sequence starts"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58249F2101E1"
+			    client     	@8
+			    supplier   	@11
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object SelfTransView "" @14
+			    location   	(1696, 814)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @15
+				Parent_View 	@14
+				location   	(1695, 755)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	372
+				justify    	0
+				label      	"[ notLastQuestion ]"
+				pctDist    	0.500000
+				height     	210
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58249F4D01A2"
+			    client     	@11
+			    supplier   	@11
+			    line_style 	4)
+			(object StateView "EndState" "$UNNAMED$2" @16
+			    location   	(784, 1040)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@16
+				location   	(838, 998)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58249F6B0391"
+			    autoResize 	TRUE)
+			(object TransView "" @17
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @18
+				Parent_View 	@17
+				location   	(1207, 994)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	276
+				justify    	0
+				label      	"[ lastQuestion ]"
+				pctDist    	0.458037
+				height     	46
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"58249F6E0386"
+			    client     	@11
+			    supplier   	@16
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5809BEDE0368"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5809BED40273"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5809BEDE0366"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"5809BED40274"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5809BED40276"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5809BED40275"))

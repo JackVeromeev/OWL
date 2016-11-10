@@ -1,0 +1,969 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"58098F1700A7"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"58098F1700A9"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"58098F270213"
+	    states     	(list States
+		(object State "$UNNAMED$0"
+		    quid       	"58098F41013E"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B5100069"
+			    supplier   	
+|"Create new game" pressed
+			    
+			    quidu      	"58098F430330"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B510006C")))
+		    type       	"StartState")
+		(object ActivityState "\"Create new game\" pressed"
+		    quid       	"58098F430330"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B51303C2"
+			    supplier   	"Check for needed number of teams"
+			    quidu      	"58098F760241"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B51303C5"))))
+		(object ActivityState "Check for needed number of teams"
+		    quid       	"58098F760241"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B51601B1"
+			    supplier   	"Add teams"
+			    quidu      	"58098FB602B2"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B51601B4"))
+			(object State_Transition
+			    quid       	"581263C103B2"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809B508009C"
+			    sendEvent  	(object sendEvent
+				quid       	"581263C103B5"))
+			(object State_Transition
+			    quid       	"581307A80338"
+			    supplier   	"Is there more then one team in lglobal list?"
+			    quidu      	"58130765024A"
+			    sendEvent  	(object sendEvent
+				quid       	"581307A8033B"))))
+		(object ActivityState "Add teams"
+		    quid       	"58098FB602B2"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B518016D"
+			    supplier   	"Record addings"
+			    quidu      	"580990000359"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B5180170"))))
+		(object ActivityState "Record addings"
+		    quid       	"580990000359"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B51A03C5"
+			    supplier   	"Create a list of questiong"
+			    quidu      	"5809901403B8"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B51A03C8"))
+			(object State_Transition
+			    quid       	"5813085B0249"
+			    supplier   	"Form for creating questions list"
+			    quidu      	"5813084A0156"
+			    sendEvent  	(object sendEvent
+				quid       	"5813085B024C"))))
+		(object ActivityState "Create a list of questiong"
+		    quid       	"5809901403B8"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B51F0070"
+			    supplier   	"Record questions"
+			    quidu      	"580990290161"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B51F0073"))))
+		(object ActivityState "Record questions"
+		    quid       	"580990290161"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B52300EF"
+			    supplier   	"Start game"
+			    quidu      	"5809904F0196"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B52300F2"))))
+		(object ActivityState "Start game"
+		    quid       	"5809904F0196"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B5260141"
+			    supplier   	"Launch stream of questions"
+			    quidu      	"5809B48A0261"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B5260144"))))
+		(object ActivityState "Launch stream of questions"
+		    quid       	"5809B48A0261"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B5280371"
+			    supplier   	"Write down the answers(true/false)"
+			    quidu      	"5809B4D4014A"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B5280374"))))
+		(object ActivityState "Write down the answers(true/false)"
+		    quid       	"5809B4D4014A"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B52B013B"
+			    supplier   	"Generate statistics"
+			    quidu      	"5809B4FE0287"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B52B013E"))))
+		(object ActivityState "Generate statistics"
+		    quid       	"5809B4FE0287"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5809B52E0225"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809B508009C"
+			    sendEvent  	(object sendEvent
+				quid       	"5809B52E0228"))))
+		(object State "$UNNAMED$1"
+		    quid       	"5809B508009C"
+		    type       	"EndState")
+		(object ActivityState "NewActivity"
+		    quid       	"5813076101A0")
+		(object Decision "Is there more then one team in lglobal list?"
+		    quid       	"58130765024A"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581307AB03D7"
+			    label      	""
+			    supplier   	"Form for team adding"
+			    quidu      	"581307890369"
+			    Event      	(object Event "Yes"
+				quid       	"581307AB03D8")
+			    sendEvent  	(object sendEvent
+				quid       	"581307AB03DA"))
+			(object State_Transition
+			    quid       	"581307F303C7"
+			    label      	""
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809B508009C"
+			    Event      	(object Event "No. Transition to team creating"
+				quid       	"581307F303C8")
+			    sendEvent  	(object sendEvent
+				quid       	"581307F303CA"))))
+		(object ActivityState "Form for team adding"
+		    quid       	"581307890369"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"581307AF0351"
+			    supplier   	"Add teams"
+			    quidu      	"58098FB602B2"
+			    sendEvent  	(object sendEvent
+				quid       	"581307AF0354"))
+			(object State_Transition
+			    quid       	"581307B600A5"
+			    supplier   	"$UNNAMED$1"
+			    quidu      	"5809B508009C"
+			    sendEvent  	(object sendEvent
+				quid       	"581307B600A8"))))
+		(object ActivityState "Form for creating questions list"
+		    quid       	"5813084A0156"
+		    transitions 	(list transition_list
+			(object State_Transition
+			    quid       	"5813085E0220"
+			    supplier   	"Create a list of questiong"
+			    quidu      	"5809901403B8"
+			    sendEvent  	(object sendEvent
+				quid       	"5813085E0223")))))
+	    partitions 	(list Partitions
+		(object Partition "User"
+		    quid       	"58098F32028B"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE)
+		(object Partition "Server"
+		    quid       	"58098F370337"
+		    persistence 	"Transient"
+		    creationObj 	FALSE
+		    multi      	FALSE))
+	    objects    	(list Objects)
+	    statediagrams 	(list StateDiagrams
+		(object ActivityDiagram "NewGame"
+		    quid       	"58098F270214"
+		    title      	"NewGame"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	1009
+		    items      	(list diagram_item_list
+			(object Swimlane "User" @1
+			    line_color 	3342489
+			    quidu      	"58098F32028B"
+			    width      	690)
+			(object StateView "StartState" "$UNNAMED$0" @2
+			    Parent_View 	@1
+			    location   	(272, 112)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(314, 82)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"58098F41013E"
+			    autoResize 	TRUE)
+			(object ActivityStateView "\"Create new game\" pressed" @3
+			    Parent_View 	@1
+			    location   	(272, 288)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@3
+				location   	(272, 282)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	
+|"Create new game" pressed
+				)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098F430330"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @4
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B5100069"
+			    client     	@2
+			    supplier   	@3
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Add teams" @5
+			    Parent_View 	@1
+			    location   	(304, 1456)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@5
+				location   	(304, 1450)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Add teams")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098FB602B2"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "Create a list of questiong" @6
+			    Parent_View 	@1
+			    location   	(336, 2432)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@6
+				location   	(336, 2426)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Create a list of questiong")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809901403B8"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "Write down the answers(true/false)" @7
+			    Parent_View 	@1
+			    location   	(352, 3312)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@7
+				location   	(352, 3297)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	394
+				justify    	0
+				label      	"Write down the answers(true/false)")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809B4D4014A"
+			    width      	524
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object StateView "EndState" "$UNNAMED$1" @8
+			    Parent_View 	@1
+			    location   	(368, 3744)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@8
+				location   	(422, 3702)
+				nlines     	2
+				max_width  	600
+				label      	"")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5809B508009C"
+			    autoResize 	TRUE)
+			(object Swimlane "Server" @9
+			    location   	(690, 0)
+			    line_color 	3342489
+			    quidu      	"58098F370337"
+			    width      	632)
+			(object ActivityStateView "Check for needed number of teams" @10
+			    Parent_View 	@9
+			    location   	(1006, 496)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@10
+				location   	(1006, 481)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	382
+				justify    	0
+				label      	"Check for needed number of teams")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58098F760241"
+			    width      	512
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object ActivityStateView "Record addings" @11
+			    Parent_View 	@9
+			    location   	(1008, 1632)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@11
+				location   	(1008, 1626)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Record addings")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"580990000359"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @12
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B518016D"
+			    client     	@5
+			    supplier   	@11
+			    vertices   	(list Points
+				(494, 1457)
+				(991, 1462)
+				(1001, 1569))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Record questions" @13
+			    Parent_View 	@9
+			    location   	(1024, 2768)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@13
+				location   	(1024, 2762)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Record questions")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"580990290161"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @14
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B51F0070"
+			    client     	@6
+			    supplier   	@13
+			    vertices   	(list Points
+				(526, 2433)
+				(1022, 2437)
+				(1023, 2705))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Generate statistics" @15
+			    Parent_View 	@9
+			    location   	(1008, 3536)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@15
+				location   	(1008, 3530)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Generate statistics")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809B4FE0287"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object DecisionView "Is there more then one team in lglobal list?" @16
+			    Parent_View 	@9
+			    location   	(1008, 784)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@16
+				location   	(1064, 735)
+				nlines     	2
+				max_width  	428
+				label      	"Is there more then one team in lglobal list?")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"58130765024A"
+			    autoResize 	TRUE)
+			(object TransView "" @17
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581307A80338"
+			    client     	@10
+			    supplier   	@16
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Form for team adding" @18
+			    Parent_View 	@9
+			    location   	(1008, 1104)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@18
+				location   	(1008, 1098)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Form for team adding")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"581307890369"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @19
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581307AF0351"
+			    client     	@18
+			    supplier   	@5
+			    vertices   	(list Points
+				(817, 1103)
+				(303, 1103)
+				(303, 1394))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Form for creating questions list" @20
+			    Parent_View 	@9
+			    location   	(1022, 1952)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@20
+				location   	(1022, 1937)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	414
+				justify    	0
+				label      	"Form for creating questions list")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5813084A0156"
+			    width      	544
+			    height     	142
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @21
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5813085B0249"
+			    client     	@11
+			    supplier   	@20
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @22
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5813085E0220"
+			    client     	@20
+			    supplier   	@6
+			    vertices   	(list Points
+				(775, 1952)
+				(334, 1953)
+				(335, 2369))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Start game" @23
+			    Parent_View 	@9
+			    location   	(1024, 2944)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@23
+				location   	(1024, 2938)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Start game")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809904F0196"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @24
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B52300EF"
+			    client     	@13
+			    supplier   	@23
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object ActivityStateView "Launch stream of questions" @25
+			    Parent_View 	@9
+			    location   	(1024, 3120)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@25
+				location   	(1024, 3114)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	293
+				justify    	0
+				label      	"Launch stream of questions")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5809B48A0261"
+			    width      	411
+			    height     	124
+			    annotation 	1
+			    autoResize 	TRUE)
+			(object TransView "" @26
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B5260141"
+			    client     	@23
+			    supplier   	@25
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object Swimlane "" @27
+			    location   	(1322, 0)
+			    line_color 	3342489
+			    width      	450)
+			(object TransView "" @28
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B5280371"
+			    client     	@25
+			    supplier   	@7
+			    vertices   	(list Points
+				(833, 3121)
+				(350, 3125)
+				(351, 3240))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @29
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B52B013B"
+			    client     	@7
+			    supplier   	@15
+			    vertices   	(list Points
+				(590, 3307)
+				(1022, 3300)
+				(1011, 3474))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @30
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @31
+				Parent_View 	@30
+				location   	(1293, 2535)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	578
+				justify    	0
+				label      	"No. Transition to team creating"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581307F303C7"
+			    client     	@16
+			    supplier   	@8
+			    vertices   	(list Points
+				(1083, 784)
+				(1278, 782)
+				(1253, 3729)
+				(410, 3743))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @32
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @33
+				Parent_View 	@32
+				location   	(1038, 887)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Yes"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"581307AB03D7"
+			    client     	@16
+			    supplier   	@18
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @34
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B52E0225"
+			    client     	@15
+			    supplier   	@8
+			    vertices   	(list Points
+				(1007, 3598)
+				(1006, 3747)
+				(410, 3744))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @35
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5809B51303C2"
+			    client     	@3
+			    supplier   	@10
+			    vertices   	(list Points
+				(462, 288)
+				(1006, 288)
+				(1006, 425))
+			    line_style 	0
+			    x_offset   	FALSE)))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"58098F2101A8"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"58098F1700A8"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"58098F1700AA"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"58098F2101AA"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"58098F1700AA"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"58098F2101A7"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"58098F1700AB"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"58098F1700AD"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"58098F1700AC"))
