@@ -1,0 +1,245 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"58258DB20198"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"58258DB2019A"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"58258DBC035E"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"58258DB20199"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"58258DB2019B"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"58258DBC0360"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"58258DB2019B"
+	physical_models 	(list unit_reference_list
+	    (object module "Controller (Server)" "NotAModuleType" "NotAModulePart"
+		quid       	"58258DDB01F8"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"58258E2802A3"
+			supplier   	"Component View::Database"
+			quidu      	"58258E1A017E"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"58258E2A035E"
+			supplier   	"Component View::Client (GUI)"
+			quidu      	"58258E1100A7"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "Client (GUI)" "NotAModuleType" "NotAModulePart"
+		quid       	"58258E1100A7"
+		stereotype 	""
+		language   	"")
+	    (object module "Database" "NotAModuleType" "NotAModulePart"
+		quid       	"58258E1A017E"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"58258F130105"
+			supplier   	"Component View::Controller (Server)"
+			quidu      	"58258DDB01F8"
+			supplier_is_spec 	TRUE))
+		language   	""))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"58258DBC035D"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ModView "Component View::Controller (Server)" "NotAModuleType" "NotAModulePart" @1
+			location   	(864, 448)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(804, 423)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	225
+			    label      	"Controller (Server)")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"58258DDB01F8"
+			width      	406
+			autoResize 	TRUE
+			width      	406
+			height     	162)
+		    (object ModView "Component View::Client (GUI)" "NotAModuleType" "NotAModulePart" @2
+			location   	(1856, 448)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(1811, 423)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	166
+			    label      	"Client (GUI)")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"58258E1100A7"
+			width      	298
+			autoResize 	TRUE
+			width      	298
+			height     	162)
+		    (object ModView "Component View::Database" "NotAModuleType" "NotAModulePart" @3
+			location   	(864, 752)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(815, 725)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	181
+			    label      	"Database")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"58258E1A017E"
+			width      	325
+			height     	181
+			autoResize 	TRUE
+			width      	325
+			height     	181)
+		    (object ModVisView "" @4
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"58258E2802A3"
+			client     	@1
+			supplier   	@3
+			line_style 	0)
+		    (object ModVisView "" @5
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"58258E2A035E"
+			client     	@1
+			supplier   	@2
+			line_style 	0)
+		    (object ModVisView "" @6
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"58258F130105"
+			client     	@3
+			supplier   	@1
+			line_style 	0)))))
+    process_structure 	(object Processes
+	quid       	"58258DB2019C"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"58258DB2019E"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"58258DB2019D"))
