@@ -23,6 +23,13 @@ class Team {
     public String getMembers() { return this.members; }
     public int getPoints() { return this.points; }
 
+    public Team(Team tm) {
+        setName(tm.getName());
+        setLead(tm.getLead());
+        setMembers(tm.getMembers());
+        setPoints(tm.getPoints());
+    }
+
     public Team(String line) {
         String[] fields;
         fields = line.split(DELIMITER);

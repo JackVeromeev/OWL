@@ -40,9 +40,29 @@ class Teams {
                 Team.DELIMITER + members + Team.DELIMITER + Team.START_POINTS;
     }
 
+    private String stringForWriting(Team tm) {
+        return "\n" + tm.getName() + Team.DELIMITER + tm.getLead() + Team.DELIMITER +
+                tm.getMembers() + Team.DELIMITER + tm.getPoints();
+    }
+
     public void addTeam(String name, String lead, String members) throws IOException {
         FileWriter fw = new FileWriter(teamsDB, true);
         fw.write(stringForAdding(name, lead, members));
         teamsList.add(new Team(name, lead, members));
+    }
+
+    public Team getTeam(String nm) {
+        for (int i = 0; i < teamsList.size(); i++) {
+            if (teamsList.get(i).getName().equals(nm))
+                return new Team(teamsList.get(i));
+        }
+        return null;
+    }
+
+    public void saveDB() throws IOException {
+        FileWriter fw = new FileWriter(teamsDB, false);
+        for (int i = 0; i < teamsList.size(); i++) {
+            fw.write(stringForWriting(teamsList.get(i)));
+        }
     }
 }
